@@ -1,0 +1,36 @@
+group 'com.softbridge'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'war'
+apply plugin: 'idea'
+apply plugin: 'maven-publish'
+apply plugin: 'fi.jasoft.plugin.vaadin'
+
+buildscript {
+    dependencies {
+        classpath group: 'fi.jasoft.plugin', name: 'gradle-vaadin-plugin', version: '0.11.1'
+    }
+    repositories {
+        maven { 'url' 'http://forge.softbridge.fr:8081/artifactory/repo'}
+        mavenLocal()
+        //mavenCentral()
+        maven { 'url' 'http://dl.bintray.com/johndevs/maven' }
+    }
+}
+
+dependencies {
+    compile("com.vaadin:vaadin-client:7.5.10")
+    compile("com.vaadin:vaadin-shared:7.5.10")
+    compile("com.vaadin:vaadin-server:7.5.10")
+    compile group: 'org.vaadin.addons', name: 'gwt-graphics', version: '1.0.0'
+}
+vaadin {
+    version '7.5.10'
+    useClassPathJar false
+    widgetset 'com.softbridge.svg.WidgetSet'
+    plugin {
+    }
+    gwt {
+        extraInherits 'org.vaadin.gwtgraphics.GWTGraphics'
+    }
+}
