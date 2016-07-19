@@ -20,7 +20,7 @@ import javax.servlet.annotation.WebServlet;
 public class SvgTestUI extends UI {
 
     @WebServlet(value = "/*", asyncSupported = true)
-    @VaadinServletConfiguration(productionMode = false, ui = SvgTestUI.class, widgetset = "com.softbridge.viewer.svg.WidgetSet")
+    @VaadinServletConfiguration(productionMode = false, ui = SvgTestUI.class, widgetset = "com.softbridge.svg.WidgetSet")
 
     public static class Servlet extends VaadinServlet {
     }
