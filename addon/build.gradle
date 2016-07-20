@@ -40,11 +40,13 @@ vaadin {
     }
 }
 jar {
+    baseName 'gwt-vaadin-graphics'
     from sourceSets.main.allJava
 }
 publishing {
     publications {
         mavenJava(MavenPublication) {
+            artifactId 'gwt-vaadin-graphics'
             from components.java
         }
     }
