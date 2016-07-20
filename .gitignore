@@ -1,7 +1,7 @@
 out
 build
-src/main/webapp/VAADIN/gwt-unitCache
-src/main/webapp/VAADIN/widgetsets
+example/build
+addon/build
 .gradle
-/out
+out
 .idea

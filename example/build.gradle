@@ -1,0 +1,43 @@
+group 'com.softbridge.svg'
+version '1.0.1-SNAPSHOT'
+
+apply plugin: 'war'
+apply plugin: 'idea'
+apply plugin: 'fi.jasoft.plugin.vaadin'
+
+buildscript {
+    dependencies {
+        classpath group: 'fi.jasoft.plugin', name: 'gradle-vaadin-plugin', version: '0.11.1'
+    }
+    repositories {
+        maven { 'url' dependenciesRepo }
+        mavenLocal()
+        mavenCentral()
+        maven { 'url' 'http://dl.bintray.com/johndevs/maven' }
+    }
+}
+
+dependencies {
+    compile("com.vaadin:vaadin-client:7.5.10")
+    compile("com.vaadin:vaadin-shared:7.5.10")
+    compile("com.vaadin:vaadin-server:7.5.10")
+    compile group: 'org.vaadin.addons', name: 'gwt-graphics', version: '1.0.0'
+}
+vaadin {
+    version '7.5.10'
+    useClassPathJar false
+    widgetset 'com.softbridge.svg.WidgetSet'
+    addon {
+        author 'Franck Lefebure'
+        license 'Apache 2.0'
+        title 'gwt-vaadin-graphics'
+    }
+    plugin {
+        themesDirectory 'build/classes/main/VAADIN/themes'
+    }
+    gwt {
+        outputDirectory new java.io.File("${rootDir}/example/build/classes/main")
+        extraInherits 'org.vaadin.gwtgraphics.GWTGraphics'
+    }
+}
+
