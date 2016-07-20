@@ -27,11 +27,6 @@ vaadin {
     version '7.5.10'
     useClassPathJar false
     widgetset 'com.softbridge.svg.WidgetSet'
-    addon {
-        author 'Franck Lefebure'
-        license 'Apache 2.0'
-        title 'gwt-vaadin-graphics'
-    }
     plugin {
         themesDirectory 'build/classes/main/VAADIN/themes'
     }

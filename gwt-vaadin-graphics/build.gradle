@@ -1,5 +1,5 @@
 group 'com.softbridge.svg'
-version '1.0.1-SNAPSHOT'
+version '1.0.1'
 
 apply plugin: 'java'
 apply plugin: 'idea'
@@ -40,13 +40,11 @@ vaadin {
     }
 }
 jar {
-    baseName 'gwt-vaadin-graphics'
     from sourceSets.main.allJava
 }
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifactId 'gwt-vaadin-graphics'
             from components.java
         }
     }

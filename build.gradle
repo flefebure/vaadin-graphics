@@ -4,6 +4,6 @@ version '1.0.1-SNAPSHOT'
 project(':example') {
     apply plugin: 'war'
     dependencies {
-        compile project(':addon')
+        compile project(':gwt-vaadin-graphics')
     }
 }
